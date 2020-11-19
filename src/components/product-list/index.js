@@ -2,8 +2,11 @@ import React, {Component} from "react";
 import "./index.css";
 
 export default class ProductList extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state  = {
+            
+        }
     }
 
     render() {
@@ -23,14 +26,14 @@ export default class ProductList extends Component {
                                 </div>
                                 <div className="card-actions justify-content-center pa-4">
 
-                                    <button className="x-small outlined" data-testid="btn-item-add">
+                                    <button  onClick = {this.addToCart} className="x-small outlined" data-testid="btn-item-add">
                                         Add To Cart
                                     </button>
 
                                     <div className="layout-row justify-content-between align-items-center">
                                         <button className="x-small icon-only outlined"
                                                 data-testid="btn-quantity-subtract">
-                                            <i className="material-icons">remove</i>
+                                            <i onClick={this.decremet} className="material-icons">remove</i>
                                         </button>
 
                                         <input type="number"
@@ -39,7 +42,7 @@ export default class ProductList extends Component {
 
                                         <button className="x-small icon-only outlined"
                                                 data-testid="btn-quantity-add">
-                                            <i className="material-icons">add</i>
+                                            <i onClick={this.increment} className="material-icons">add</i>
                                         </button>
                                     </div>
 
